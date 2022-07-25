@@ -8,6 +8,8 @@ import loginRoutes from './routes/loginRoutes.js'
 import favicon from 'serve-favicon';
 
 const app = express();
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 app.use(cors());
 app.use(favicon('./favicon.ico'));
 app.use(express.json());
