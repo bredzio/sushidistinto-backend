@@ -5,9 +5,11 @@ import cursoRoutes from './routes/cursosRoutes.js';
 import ordenRoutes from './routes/ordenRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import loginRoutes from './routes/loginRoutes.js'
+import favicon from 'serve-favicon';
 
 const app = express();
 app.use(cors());
+app.use(favicon('./favicon.ico'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use('/cursos', cursoRoutes);
