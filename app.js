@@ -14,14 +14,14 @@ app.use(cors());
 app.use(favicon('./favicon.ico'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
+app.get('/', (req, res)=>{
+     res.send('API REST CURSOS SUSHI DISTINTO')
+})
 app.use('/cursos', cursoRoutes);
 app.use('/ordenes', ordenRoutes);
 app.use('/usuarios', userRoutes);
 app.use('/login', loginRoutes);
 
-app.get('/', (req, res)=>{
-     res.send('API REST CURSOS SUSHI DISTINTO')
-})
 
 const PORT = process.env.PORT || 8000
 
